@@ -1,6 +1,7 @@
 /**
  * Want a "nice", complete println of a graph of objects without
- * having to traverse each object by hand.  Use the JsonBuilder.
+ * having to traverse each object by hand? Use the JsonBuilder or
+ JsonOutput.
  */
 import groovy.json.*
 
@@ -26,7 +27,7 @@ enum AddressType {
 }
 
 def person = new Person(
-    name: 'john', 
+    name: 'john',
     addresses: [
         new Address(
             type: AddressType.HOME,
@@ -45,5 +46,7 @@ def person = new Person(
     ]
 )
 
-// the useful code!
+// the useful code - json builder
 println new JsonBuilder(person).toPrettyString()
+// -or- JsonOutput
+println JsonOutput.prettyPrint(JsonOutput.toJson(person))
