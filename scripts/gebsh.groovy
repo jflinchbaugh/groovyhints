@@ -18,7 +18,7 @@ Grape.grab(group: 'org.gebish', module: 'geb-core', version: '1.1.1')
 Grape.grab(
     group: 'org.seleniumhq.selenium',
     module: 'selenium-firefox-driver',
-    version:'3.3.1'
+    version: '3.3.1'
 )
 
 import geb.*
