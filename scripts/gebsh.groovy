@@ -25,30 +25,17 @@ Grape.grab(
 import geb.*
 import org.openqa.selenium.*
 
-browser = new Browser()
-
-refresh = {
-    driver = browser.driver
-    page = browser.page
-    title = browser.title
-    currentUrl = browser.currentUrl
-}
-
-this.'$' = browser.&$
-go = { Object[] args -> def ret = browser.go(*args); refresh(); ret }
-
-refresh()
+b = new Browser()
 
 println '''
 Welcome!
-Example Usage:
-  groovy:000> go 'http://google.com'
-  groovy:000> println $('a')*.@href
-  groovy:000> $('a')[0].click()
-  groovy:000> refresh() // to update current state from browser
-  groovy:000> println title
-  groovy:000> println currentUrl
-  groovy:000> println page.title
-  groovy:000> driver.navigate().back()
-  groovy:000> println browser.q
+Example Usage (b is your browser):
+  groovy:000> b.go 'http://google.com'
+  groovy:000> println b.$('a')*.@href
+  groovy:000> b.$('a')[0].click()
+  groovy:000> println b.title
+  groovy:000> println b.currentUrl
+  groovy:000> println b.page.title
+  groovy:000> b.driver.navigate().back()
+  groovy:000> println b.q
 '''
