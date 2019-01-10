@@ -11,8 +11,8 @@ import groovy.grape.Grape
 Grape.grab(group: 'org.gebish', module: 'geb-core', version: '1.1.1')
 Grape.grab(
     group: 'org.seleniumhq.selenium',
-    module: 'selenium-firefox-driver',
-    version: '3.3.1'
+    module: 'selenium-chrome-driver',
+    version: '3.14.0'
 )
 /*
 Grape.grab(
